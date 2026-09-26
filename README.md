@@ -67,8 +67,7 @@ omada-portal/
 ├── requirements.txt
 ├── requirements-dev.txt
 ├── .env.example
-├── .gitignore
-└── LICENSE
+└── .gitignore
 ```
 
 ### Dos identidades distintas — no las confundas
@@ -229,8 +228,3 @@ pytest
   automáticamente.
 - Sincronizar con un directorio externo (LDAP/AD) para el login del portal.
 
----
-
-## Licencia
-
-MIT — ver [`LICENSE`](./LICENSE).
