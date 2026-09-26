@@ -1,0 +1,42 @@
+# Entornos y dependencias
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+
+# Configuración sensible
+.env
+.env.*
+!.env.example
+
+# Datos locales / DuckDB / cache de tokens
+data/*.duckdb
+data/*.duckdb.wal
+data/.omada_token_cache.json
+data/*.tmp
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Empaquetado / build
+build/
+dist/
+*.egg-info/
+
+# Tests / cobertura
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Logs
+*.log
+
+# Editores
+.vscode/
+.idea/
