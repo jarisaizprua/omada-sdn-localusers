@@ -216,17 +216,5 @@ pytest
   nivel de red (fail2ban, firewall, etc.) contra fuerza bruta.
 - El paquete `omada_client/` no depende de Streamlit ni de DuckDB: puedes
   copiarlo a un script de automatización, un bot, otra app web, etc.
-- Si más adelante quieres desplegarlo fuera de tu máquina (un servidor,
-  Docker, Streamlit Cloud...), avísame y retomamos esa parte — por ahora
-  el proyecto queda enfocado en correr como app local.
 
 ---
-
-## 🗺️ Ideas para extender
-
-- Exportar/import masivo de usuarios locales vía CSV/Excel.
-- Notificaciones (email/SMS) al crear un usuario con contraseña temporal.
-- Vincular la expiración de usuarios a un cron/job que los desactive
-  automáticamente.
-- Sincronizar con un directorio externo (LDAP/AD) para el login del portal.
-
