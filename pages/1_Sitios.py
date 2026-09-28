@@ -14,10 +14,8 @@ from auth.session_guard import require_login
 from config import get_settings
 from omada_client.exceptions import OmadaError
 from services.omada_service import clear_sites_cache, get_sites_cached
-from utils.ui import apply_theme, page_header
+from utils.ui import page_header
 
-st.set_page_config(page_title="Sitios | Omada WiFi User Portal", page_icon="🌐", layout="wide")
-apply_theme()
 settings = get_settings()
 require_login(settings.session_timeout_minutes)
 

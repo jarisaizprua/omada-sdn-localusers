@@ -42,6 +42,7 @@ def require_login(session_timeout_minutes: int = 30) -> dict:
     elapsed_minutes = (time.time() - st.session_state.get("login_ts", 0)) / 60
     if elapsed_minutes > session_timeout_minutes:
         log_out()
+        st.query_params.clear()  # evita que un refresh con el token viejo resucite la sesión
         st.warning("Tu sesión expiró por inactividad. Vuelve a iniciar sesión.")
         st.page_link("app.py", label="Ir a inicio de sesión", icon="🔐")
         st.stop()
@@ -49,8 +50,8 @@ def require_login(session_timeout_minutes: int = 30) -> dict:
     return current_admin()
 
 
-def require_role(*allowed_roles: str) -> dict:
-    admin = require_login()
+def require_role(*allowed_roles: str, session_timeout_minutes: int = 30) -> dict:
+    admin = require_login(session_timeout_minutes)
     if admin["role"] not in allowed_roles:
         st.error("No tienes permisos suficientes para ver esta página.")
         st.stop()

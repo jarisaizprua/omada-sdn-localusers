@@ -14,12 +14,10 @@ from auth.admin_store import AdminStore
 from auth.audit import AuditLog
 from auth.session_guard import require_role
 from config import get_settings
-from utils.ui import apply_theme, page_header
+from utils.ui import page_header
 
-st.set_page_config(page_title="Administración | Omada WiFi User Portal", page_icon="🛡️", layout="wide")
-apply_theme()
 settings = get_settings()
-admin = require_role("superadmin")
+admin = require_role("superadmin", session_timeout_minutes=settings.session_timeout_minutes)
 
 store = AdminStore(settings.app_db_path)
 audit = AuditLog(settings.app_db_path)

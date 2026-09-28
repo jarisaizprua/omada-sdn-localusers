@@ -34,8 +34,10 @@ puedes copiar a otro proyecto sin cambios.
 
 ```
 omada-portal/
-├── app.py                      # Página de login + MFA + panel de inicio
+├── app.py                      # Enrutador: login + MFA + navegación (st.navigation) + logo
 ├── config.py                   # Configuración vía variables de entorno (.env)
+├── assets/
+│   └── logo.svg                # Logo mostrado en la barra lateral (st.logo)
 ├── pages/
 │   ├── 1_Sitios.py             # Listado de sites del controlador
 │   ├── 2_Usuarios.py           # CRUD de usuarios locales de WiFi (multi-sitio)

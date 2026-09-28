@@ -28,10 +28,8 @@ from services.omada_service import (
     get_omada_client,
     get_sites_cached,
 )
-from utils.ui import apply_theme, page_header
+from utils.ui import page_header
 
-st.set_page_config(page_title="Usuarios WiFi | Omada WiFi User Portal", page_icon="👥", layout="wide")
-apply_theme()
 settings = get_settings()
 admin = require_login(settings.session_timeout_minutes)
 audit = AuditLog(settings.app_db_path)
